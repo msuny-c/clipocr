@@ -5,6 +5,8 @@ description = "Get image from clipboard, send to OpenAI Vision, put text back to
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 license = "MIT"
+package-mode=false
+# No packages defined, as core.py and cli.py are top-level scripts
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -12,14 +14,11 @@ openai = ">=1.0"
 Pillow = "*"
 pyperclip = "*"
 python-dotenv = "*"
-# keyboard dependency removed
 
 [tool.poetry.scripts]
-clipocr = "cli:main"
+clipocr = "cli:main" # Points to the main function in cli.py
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0"          # Testing framework
-pytest-asyncio = "^0.23" # For testing async code with pytest
 ruff = "^0.4"            # Linter and formatter
 pyinstaller = { version = "^6.0", python = "<3.13" } # For building executables (optional), restricted Python version
 # Add other dev dependencies here if needed, e.g., coverage

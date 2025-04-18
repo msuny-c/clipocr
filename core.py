@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Define the path to the prompts directory relative to this file's parent
-PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+# Define the path to the prompts directory relative to this file
+PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 def load_system_prompt(prompt_name: str = "default") -> str:
     """Loads the specified prompt file from the prompts directory."""

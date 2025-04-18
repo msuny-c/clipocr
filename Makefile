@@ -30,7 +30,7 @@ lint:
 
 clean:
 	@echo ">>> Cleaning up..."
-	@rm -rf build dist *.egg-info .pytest_cache .coverage htmlcov *.spec __pycache__ clipgpt_ocr/__pycache__ .venv
+	@rm -rf build dist *.egg-info .pytest_cache .coverage htmlcov *.spec __pycache__ .venv
 	@find . -name '*.pyc' -delete
 	@find . -name '*.pyo' -delete
 

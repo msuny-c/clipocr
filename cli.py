@@ -2,7 +2,7 @@ import asyncio
 import argparse
 import sys
 from pathlib import Path # Import Path
-from clipgpt_ocr import core
+import core # Import core directly
 import os # Needed for checking prompt file existence
 
 # Define the path to the prompts directory relative to this script's location

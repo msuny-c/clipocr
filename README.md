@@ -14,11 +14,13 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 ## Installation
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/your-username/clipgpt-ocr.git
     cd clipgpt-ocr
     ```
 2.  **Install dependencies (using Poetry):**
+
     ```bash
     pip install poetry
     poetry install
@@ -26,6 +28,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 3.  **Set up your API Key & Configuration:**
     *   Rename `.env.example` to `.env`.
     *   Open `.env` and replace `sk-...` with your actual OpenAI API key.
+
     ```bash
     cp .env.example .env
     # Now edit .env with your key
@@ -36,6 +39,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 [pipx](https://github.com/pypa/pipx) is a tool to install and run Python applications in isolated environments. This is the recommended way to install `clipgpt-ocr` globally.
 
 1.  **Install pipx:** Follow the official [pipx installation guide](https://pipx.pypa.io/stable/installation/). Usually, it's something like:
+
     ```bash
     python3 -m pip install --user pipx
     python3 -m pipx ensurepath
@@ -44,11 +48,13 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 
 2.  **Install clipgpt-ocr using pipx:**
     *   **From Git (Recommended after publishing):**
+
         ```bash
         # Replace with the actual URL once published
         pipx install git+https://github.com/your-username/clipgpt-ocr.git
         ```
     *   **From local source:**
+
         ```bash
         # Run from the project's root directory
         pipx install .
@@ -65,10 +71,12 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 You can build a standalone executable using PyInstaller (requires Python < 3.13 for the current PyInstaller version).
 
 1.  **Install development dependencies:**
+
     ```bash
     poetry install --with dev
     ```
 2.  **Build the executable:**
+
     ```bash
     make build-exe
     ```
@@ -79,10 +87,12 @@ You can build a standalone executable using PyInstaller (requires Python < 3.13 
 
 1.  Copy an image (or take a screenshot) to your clipboard.
 2.  Run the script from your terminal:
+
     ```bash
     poetry run clipocr
     ```
     Or, if you installed it globally or are using a virtual environment activated differently:
+
     ```bash
     clipocr
     ```
@@ -100,15 +110,18 @@ You can build a standalone executable using PyInstaller (requires Python < 3.13 
 ## Development
 
 *   **Install Dev Dependencies:** Make sure you have installed development dependencies.
+
     ```bash
     poetry install --with dev
     ```
 *   **Linting:** Check code style using `ruff`.
+
     ```bash
     make lint
     # Or: poetry run ruff check .
     ```
 *   **Building Executable:** Create a standalone executable using `PyInstaller`. The executable will be placed in the `dist/` directory.
+
     ```bash
     make build-exe
     # Or: poetry run pyinstaller --onefile --name clipocr --add-data "prompts:prompts" cli.py

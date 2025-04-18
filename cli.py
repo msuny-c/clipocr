@@ -69,12 +69,16 @@ def main():
 
     # Run the OCR process once immediately using the specified prompt
     print(f"🚀 Starting ClipGPT-OCR using prompt: '{prompt_name}'...")
-    success = asyncio.run(core.run_ocr_process(prompt_name=prompt_name))
-    if not success:
-        # Error messages are printed within core functions
-        sys.exit(1) # Exit with error code if process failed
-    else:
-        print("✨ Process finished.")
+    try:
+        success = asyncio.run(core.run_ocr_process(prompt_name=prompt_name))
+        if not success:
+            # Error messages are printed within core functions
+            sys.exit(1) # Exit with error code if process failed
+        else:
+            print("✨ Process finished.")
+    except KeyboardInterrupt:
+        print("\n🚫 Process interrupted by user (Ctrl+C). Exiting.")
+        sys.exit(0) # Exit gracefully
 
 if __name__ == "__main__":
     main()

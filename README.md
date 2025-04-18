@@ -1,4 +1,4 @@
-# ClipGPT-OCR
+# clipocr
 
 A simple CLI utility to grab an image from the clipboard, send it to OpenAI Vision API (GPT-4o-mini by default) for text extraction and rewriting, and put the resulting text back into the clipboard.
 
@@ -6,7 +6,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 
 *   **Clipboard Integration:** Reads images directly from the clipboard (`Ctrl+C` / `Cmd+C` on an image or screenshot).
 *   **OpenAI Vision:** Uses the powerful vision capabilities of OpenAI's models (configurable via `OPENAI_MODEL` environment variable).
-*   **Text Rewriting:** Leverages a customizable system prompt (`clipgpt_ocr/prompt.txt`) to instruct the AI on how to format the extracted text (default: remove line breaks).
+*   **Text Rewriting:** Leverages a customizable system prompt (`prompts/default.txt`) to instruct the AI on how to format the extracted text (default: remove line breaks).
 *   **Instant Output:** Places the processed text directly back into the clipboard, ready to paste (`Ctrl+V` / `Cmd+V`).
 *   **Environment Variable Configuration:** Securely manages your OpenAI API key via a `.env` file (`OPENAI_API_KEY`).
 *   **CLI Interface:** Simple command-line execution.
@@ -17,7 +17,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 
     ```bash
     git clone https://github.com/msuny-c/clipocr.git
-    cd clipgpt-ocr
+    cd clipocr
     ```
 2.  **Install dependencies (using Poetry):**
 
@@ -37,7 +37,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 
 ### Global Installation (Recommended: pipx)
 
-[pipx](https://github.com/pypa/pipx) is a tool to install and run Python applications in isolated environments. This is the recommended way to install `clipgpt-ocr` globally.
+[pipx](https://github.com/pypa/pipx) is a tool to install and run Python applications in isolated environments. This is the recommended way to install `clipocr` globally.
 
 1.  **Install pipx:** Follow the official [pipx installation guide](https://pipx.pypa.io/stable/installation/). Usually, it's something like:
 
@@ -47,7 +47,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
     ```
     *(Restart your terminal after running `ensurepath`)*
 
-2.  **Install clipgpt-ocr using pipx:**
+2.  **Install clipocr using pipx:**
     *   **From Git:**
 
         ```bash
@@ -102,7 +102,7 @@ You can build a standalone executable using PyInstaller (requires Python < 3.13 
 *   **API Key:** (Required) Set `OPENAI_API_KEY` in your `.env` file.
 *   **Model:** (Optional) Set `OPENAI_MODEL` in your `.env` file (e.g., `OPENAI_MODEL="gpt-4-vision-preview"`). Defaults to `gpt-4o-mini` if not set.
 *   **Base URL:** (Optional) Set `OPENAI_BASE_URL` in your `.env` file if you need to use a custom OpenAI-compatible API endpoint.
-*   **System Prompts:** (Optional) Modify or add prompt files (simple `.txt` files) in the `prompts/` directory. The name of the file (without `.txt`) is used to select the prompt via the `--prompt` flag or with the `--hotkey` flag. Default is `prompts/default.txt`.
+*   **System Prompts:** (Optional) Modify or add prompt files (simple `.txt` files) in the `prompts/` directory. The name of the file (without `.txt`) is used to select the prompt via the `--prompt` flag. Default is `prompts/default.txt`.
 
 ## Command-Line Arguments
 

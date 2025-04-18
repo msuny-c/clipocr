@@ -16,7 +16,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/clipgpt-ocr.git
+    git clone https://github.com/msuny-c/clipocr.git
     cd clipgpt-ocr
     ```
 2.  **Install dependencies (using Poetry):**
@@ -28,6 +28,7 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
 3.  **Set up your API Key & Configuration:**
     *   Rename `.env.example` to `.env`.
     *   Open `.env` and replace `sk-...` with your actual OpenAI API key.
+
 
     ```bash
     cp .env.example .env
@@ -47,11 +48,10 @@ A simple CLI utility to grab an image from the clipboard, send it to OpenAI Visi
     *(Restart your terminal after running `ensurepath`)*
 
 2.  **Install clipgpt-ocr using pipx:**
-    *   **From Git (Recommended after publishing):**
+    *   **From Git:**
 
         ```bash
-        # Replace with the actual URL once published
-        pipx install git+https://github.com/your-username/clipgpt-ocr.git
+        pipx install git+https://github.com/msuny-c/clipocr.git
         ```
     *   **From local source:**
 

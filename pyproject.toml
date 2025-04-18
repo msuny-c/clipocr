@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "clipgpt-ocr"
+version = "0.1.0"
+description = "Get image from clipboard, send to OpenAI Vision, put text back to clipboard."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openai = ">=1.0"
+Pillow = "*"
+pyperclip = "*"
+python-dotenv = "*"
+# keyboard dependency removed
+
+[tool.poetry.scripts]
+clipocr = "cli:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"          # Testing framework
+pytest-asyncio = "^0.23" # For testing async code with pytest
+ruff = "^0.4"            # Linter and formatter
+pyinstaller = { version = "^6.0", python = "<3.13" } # For building executables (optional), restricted Python version
+# Add other dev dependencies here if needed, e.g., coverage
+
+[build-system]
+requires = ["poetry-core>=1.0.0"] # Specify minimum poetry-core version
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,1 @@
+# This file makes clipgpt_ocr a Python package.
